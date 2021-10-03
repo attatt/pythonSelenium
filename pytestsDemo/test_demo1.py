@@ -5,9 +5,15 @@
 import pytest
 
 
-def test_firstProgram():
+
+def test_firstProgram(setup):  # we use 'setup' as an argument, so that it is linked to the fixture
     print("Hello")
 
 @pytest.mark.smoke
 def test_secondCreditCardProgram():
     print("Sup")
+
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser[0])
+    print(crossBrowser[1])
