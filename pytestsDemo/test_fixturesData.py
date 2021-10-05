@@ -1,8 +1,13 @@
 import pytest
 
-@pytest.mark.usefixtures("dataLoad")
-class TestFixtureExample:
+from .BaseClass import BaseClass
 
-    def test_editProfile(self, dataLoad):  # here, we must pass the fixture name to the method, because we return something from the fixture
-        print(dataLoad)
+
+@pytest.mark.usefixtures("dataLoad")
+class TestExample2(BaseClass):
+
+    def test_editProfile222(self, dataLoad):
+        log = self.getLogger()
+        log.info(dataLoad[0])
+        log.critical(dataLoad[2])
         print(dataLoad[2])
